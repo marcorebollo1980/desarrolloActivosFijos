@@ -20,57 +20,57 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name = "activos")
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties(value = { "fecha_compra", "fecha_baja" }, allowGetters = true)
+//@JsonIgnoreProperties(value = { "fecha_compra", "fecha_baja" }, allowGetters = true)
 public class ActivosModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer serial_activos;
+	private Long serial_activos;
 
 	@Column(name = "nombre", nullable = false, length = 150)
 	private String nombre;
 
-	@Column(name = "descripcion", nullable = false, length = 200)
+	@Column(name = "descripcion", length = 200)
 	private String descripcion;
 
-	@Column(name = "tipo", nullable = false, length = 150)
+	@Column(name = "tipo", length = 150)
 	private String tipo;
 
 	@Column(name = "numero_interno_inventario", nullable = false, length = 200)
 	private String numero_interno_inventario;
 
-	@Column(name = "peso", nullable = false)
+	@Column(name = "peso")
 	private float peso;
 
-	@Column(name = "alto", nullable = false)
+	@Column(name = "alto")
 	private float alto;
 
-	@Column(name = "ancho", nullable = false)
+	@Column(name = "ancho")
 	private float ancho;
 
-	@Column(name = "largo", nullable = false)
+	@Column(name = "largo")
 	private float largo;
 
-	@Column(name = "valor_compra", nullable = false)
+	@Column(name = "valor_compra")
 	private float valor_compra;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "fecha_compra", nullable = false)
+	@Column(name = "fecha_compra")
 	private Date fecha_compra;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "fecha_baja", nullable = false)
+	@Column(name = "fecha_baja")
 	private Date fecha_baja;
 
-	@Column(name = "estado_actual", nullable = false, length = 50)
+	@Column(name = "estado_actual", length = 50)
 	private String estado_actual;
 
-	@Column(name = "color", nullable = false, length = 100)
+	@Column(name = "color",length = 100)
 	private String color;
 
-	@Column(name = "area", nullable = false, length = 150)
+	@Column(name = "area",length = 150)
 	private String area;
 
 	/* Setters and Getters */
@@ -78,11 +78,11 @@ public class ActivosModel implements Serializable {
 		return nombre;
 	}
 
-	public Integer getSerial_activos() {
+	public Long getSerial_activos() {
 		return serial_activos;
 	}
 
-	public void setSerial_activos(Integer serial_activos) {
+	public void setSerial_activos(Long serial_activos) {
 		this.serial_activos = serial_activos;
 	}
 
