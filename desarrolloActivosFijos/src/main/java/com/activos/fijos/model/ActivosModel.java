@@ -207,4 +207,5 @@ public class ActivosModel implements Serializable {
 				+ ", color=" + color + ", area=" + area + "]";
 	}
 
+
 }
